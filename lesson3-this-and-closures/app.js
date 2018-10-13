@@ -2,7 +2,18 @@
 // myCar.make = 'ZAZ';
 // myCar.model = 'Tavria';
 // myCar.year = '1989';
+var a = {
+    name: "John",
+    surname:"Connor",
+    sex: "male"
+}
+a.toString = () =>{
+    return "Gdgd";
+}
+//console.log(a.toString());
 
+
+var o = Object.create(null);
 //////////////////////////
 
 // var myCar = {
@@ -15,24 +26,25 @@
 
 // var o = Object.create()
 
-// function testFunction() {
-//     console.log(this)
-// }
+function testFunction() {
+   // console.log(this)
+}
 
-// testFunction()
+testFunction()
 
 ////////////////////////
 // method borrowing
 
-// function printArgs() {
-//     arguments.join = [].join; // одолжили метод (1)
+function printArgs() {
+
+    arguments.join = [].join; // одолжили метод (1)
   
-//     var argStr = arguments.join(':'); // (2)
+    var argStr = arguments.join(':'); // (2)
   
-//     console.log( argStr ); // сработает и выведет 1:2:3
-//   }
+    console.log( argStr ); // сработает и выведет 1:2:3
+  }
   
-//   printArgs(1, 2, 3);
+printArgs(1, 2, 3);
 
 // function printArgs() {
 //     // вызов arr.slice() скопирует все элементы из this в новый массив
@@ -44,17 +56,19 @@
 
 ////////////////////////
 
-// function showFullName() {
-//     alert( this.firstName + " " + this.lastName );
-//   }
+function showFullName() {
+   console.log (this.firstName + " " + this.lastName );
+  }
   
-//   var user = {
-//     firstName: "Микита",
-//     lastName: "Кожум'яка"
-//   };
+  var user = {
+    firstName: "Микита",
+    lastName: "Кожум'яка"
+  };
   
 //   // функция вызовется с this=user
-//   showFullName.call(user)
+  showFullName.call(user)
+  var j = showFullName.bind(user)
+  console.log(j())
 
 // После контекста в call можно передать аргументы для функции. Вот пример с более сложным вариантом showFullName, который конструирует ответ из указанных свойств объекта:
 // var user = {
@@ -74,6 +88,6 @@
 
 ///// apply
 var arr = [3, 5, 6, 1]
-console.log(Math.max(null, arr))
+console.log(Math.max.apply(null, arr))
 
 
