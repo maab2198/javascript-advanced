@@ -22,15 +22,15 @@ var bird = {
    sparrow.__proto__ = bird
 
   // в sparrow можно найти оба свойства
-  console.log( sparrow.jumps)
-  console.log( sparrow['I am sparrow'] )
+//  console.log( sparrow.jumps)
+//  console.log( sparrow['I am sparrow'] )
 
   for (var key in sparrow) {
-    if (sparrow.hasOwnProperty(key))
-    console.log(key + " = " + sparrow[key])
+ //   if (sparrow.hasOwnProperty(key))
+//    console.log(key + " = " + sparrow[key])
   }
 
-   console.log(Object.keys(sparrow))
+//   console.log(Object.keys(sparrow))
 
  Object.create(null)
 ///////////////////////////////////////////////////////
@@ -60,14 +60,14 @@ var bird = {
 
 // Show contructor and prototype property
 
-// var bird = {
-//   eats: true
-// };
+var Bird = {
+  eats: true
+};
 
-// function Sparrow(name) {
-//   this.name = name;
-//   this.__proto__ = bird;
-// }
+function Sparrow(name) {
+  this.name = name;
+  this.__proto__ = Bird;
+}
 
 // var sparrow = new Sparrow("Sparrow");
 
