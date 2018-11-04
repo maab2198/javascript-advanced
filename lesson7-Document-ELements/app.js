@@ -34,3 +34,7 @@ class Button extends UiComponent {
 var button = new Button("button","text");
 button.show(document.body);
 button.clickMe();
+
+
+
+

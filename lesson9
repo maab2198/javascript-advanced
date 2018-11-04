@@ -1,0 +1,12 @@
+function setCookie(key,value,expires) {
+    var cookie =  key+ "=" + value; 
+    var dayoff = new Date;
+    dayoff.setTime(dayoff.getTime() + 24 * expires * 60 *60 *1000)
+    document.cookie = cookie + ";expires=" + dayoff.toUTCString()
+}
+
+function deleteCookie(key) {
+    setCookie(key,"",-1)
+}
+
+setCookie("age", 20, 0)
