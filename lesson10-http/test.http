@@ -1,0 +1,6 @@
+POST http://127.0.0.1:5000/laba_inf_tex/api/v1.0/ssd.json/union_of_tables
+
+
+{
+	"names" : ["tab3","tab2"]
+}

@@ -3,8 +3,9 @@ makeRequest('https://jsonplaceholder.typicode.com/posts');
 function doSomethingWithConent(httpRequest) {
 
     if (httpRequest.readyState == 4) {
-        if (httpRequest.status == 200) {
+        if (httpRequest.status == 200 || httpRequest.status == 201) {
             console.log(JSON.parse(httpRequest.responseText));
+            
         } else {
             console.error('С запросом возникла проблема.');
         }
@@ -35,7 +36,7 @@ function makeRequest(url) {
         return false;
     }
     httpRequest.onreadystatechange = function () { doSomethingWithConent(httpRequest); };
-    httpRequest.open('GET', url, true);
+    httpRequest.open(method, url, true);
     httpRequest.send(null);
 
     // for post 
